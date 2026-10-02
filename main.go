@@ -1,15 +1,15 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
+	"example.com/rest-api/db"
 	"example.com/rest-api/models"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	fmt.Println("hello world")
+	db.InitDB()
 	server := gin.Default()
 	server.GET("/events", getAllEvents)
 	server.POST("/events", createEvent)
